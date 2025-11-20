@@ -52,16 +52,16 @@ const ServicesSection = () => {
   const transitionConfig = { duration: 0.6, ease: "easeInOut" };
 
   return (
-    <section className="container mx-auto px-4 lg:px-8 py-4">
+    <section id="services" className="scroll-mt-24 md:scroll-mt-32 container mx-auto px-4 lg:px-8 py-4">
       {/* ================= DESKTOP ================= */}
       <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center">
         {/* Left - Text & Arrows */}
-        <div className="flex flex-col justify-between items-start gap-2">
+        <div className="flex flex-col justify-between items-end gap-32">
           <div className="flex flex-col gap-2">
-            <h4 className="text-orange-500 text-lg font-medium font-roboto">
+            <h4 className="text-primary text-body font-medium font-roboto">
               Our Services
             </h4>
-            <h2 className="text-neutral-950 text-2xl font-bold leading-tight font-roboto">
+            <h2 className="text-neutral-950 text-h4 font-bold leading-tight font-roboto">
               From design to development, we provide end-to-end digital services
               that help your business grow smarter, faster, and stronger
             </h2>
@@ -128,10 +128,10 @@ const ServicesSection = () => {
       </div>
 
       {/* ================= MOBILE & TABLET ================= */}
-      <div className="flex flex-col lg:hidden gap-2 items-center">
+      <div className="flex flex-col lg:hidden gap-8 items-center">
         {/* Text atas */}
         <div className="text-left flex flex-col gap-3">
-          <h4 className="text-orange-500 text-base font-medium font-roboto">
+          <h4 className="text-primary font-medium font-roboto">
             Our Services
           </h4>
           <h2 className="text-neutral-950 text-lg md:text-xl font-bold leading-snug font-roboto">
@@ -141,7 +141,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Card */}
-        <div className="relative w-full md:w-4/5 h-[420px] flex items-end">
+        <div className="relative w-full h-[420px] flex items-end">
           {/* 💡 tambahkan height tetap dan center agar arrow tidak ketutup */}
           <AnimatePresence custom={direction} mode="wait">
             <motion.div
@@ -174,7 +174,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Arrow bawah (sekarang akan selalu tampil dan bisa diklik) */}
-        <div className="flex items-center justify-center gap-6 mt-4">
+        <div className="flex w-full justify-end gap-6">
           <button
             onClick={handlePrev}
             disabled={currentCard === 0}

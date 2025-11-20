@@ -1,138 +1,93 @@
-import React from 'react';
-import { FiMail, FiPhone, FiMapPin, FiFacebook, FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi';
+import React from "react";
+import LinkedIn from "../../assets/linkedin.svg";
+import Instagram from "../../assets/instagram.svg";
+import TikTok from "../../assets/tiktok.svg";
+import FooterLogo from '../../assets/footer_logo.svg';
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear();
+  return (
+    <footer className="w-full px-6 md:px-16 lg:px-24 py-8 md:py-16 bg-[#FAFAFA] text-[#222]">
 
-    const footerLinks = {
-        product: ['Features', 'Pricing', 'Security', 'Roadmap'],
-        company: ['About Us', 'Careers', 'Blog', 'Press Kit'],
-        resources: ['Documentation', 'Help Center', 'Community', 'Contact'],
-        legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'Licenses']
-    };
+      {/* TOP SECTION */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20">
+        {/* Left */}
+        <div className="grid grid-cols-1 gap-4 md:gap-10">
+          {/* Logo */}
+            <div className="flex flex-col gap-4 md:gap-6">
+            <img src={FooterLogo} alt="Nongslab Logo" className="w-40 md:w-44" />
 
-    return (
-        <footer className="bg-gray-900 text-white">
-            {/* Main Footer Content */}
-            <div className="container mx-auto px-4 py-12 md:py-16">
-                <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
-                    {/* Company Info */}
-                    <div className="lg:col-span-2">
-                        <h3 className="text-2xl font-bold mb-4">Nexora</h3>
-                        <p className="text-gray-400 mb-6 leading-relaxed">
-                            Empowering businesses with innovative digital solutions.
-                            Transform your operations and achieve unprecedented growth with our platform.
-                        </p>
-
-                        {/* Contact Info */}
-                        <div className="space-y-3">
-                            <div className="flex items-center gap-3 text-gray-400">
-                                <FiMail className="text-primary" />
-                                <span>info@nexora.com</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-gray-400">
-                                <FiPhone className="text-primary" />
-                                <span>+62 123 4567 890</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-gray-400">
-                                <FiMapPin className="text-primary" />
-                                <span>Jakarta, Indonesia</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Product Links */}
-                    <div>
-                        <h4 className="text-lg font-semibold mb-4">Product</h4>
-                        <ul className="space-y-2">
-                            {footerLinks.product.map((link) => (
-                                <li key={link}>
-                                    <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                                        {link}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Company Links */}
-                    <div>
-                        <h4 className="text-lg font-semibold mb-4">Company</h4>
-                        <ul className="space-y-2">
-                            {footerLinks.company.map((link) => (
-                                <li key={link}>
-                                    <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                                        {link}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Resources Links */}
-                    <div>
-                        <h4 className="text-lg font-semibold mb-4">Resources</h4>
-                        <ul className="space-y-2">
-                            {footerLinks.resources.map((link) => (
-                                <li key={link}>
-                                    <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                                        {link}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-
-                {/* Newsletter Section */}
-                <div className="mt-12 pt-8 border-t border-gray-800">
-                    <div className="max-w-md mx-auto md:mx-0">
-                        <h4 className="text-lg font-semibold mb-3">Subscribe to our newsletter</h4>
-                        <p className="text-gray-400 mb-4 text-sm">
-                            Get the latest updates and news delivered to your inbox.
-                        </p>
-                        <div className="flex gap-2">
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="flex-1 px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-primary text-white"
-                            />
-                            <button className="bg-primary hover:bg-secondary px-6 py-2 rounded-lg transition-colors font-semibold">
-                                Subscribe
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <p className="text-light max-w-md leading-relaxed">
+                Your Trusted Partner for Sustainable Digital Growth
+        </p>
             </div>
+          {/* Social Icons */}
+          <div className="flex gap-4 mt-1">
+            <img src={LinkedIn} className="w-8 h-8 text-[#6A6A6A]" />
+            <img src={TikTok} className="w-8 h-8 text-[#6A6A6A]" /> {/* TikTok icon substitute */}
+            <img src={Instagram} className="w-8 h-8 text-[#6A6A6A]" />
+          </div>
+        </div>
 
-            {/* Bottom Footer */}
-            <div className="border-t border-gray-800">
-                <div className="container mx-auto px-4 py-6">
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-gray-400 text-sm">
-                            &copy; {currentYear} Nexora. All rights reserved.
-                        </p>
+        {/* Middle Services */}
+        <div>
+          <h3 className="font-semibold text-light mb-4">Main Services</h3>
+          <ul className="space-y-3 text-gray-600">
+            <li>UI Design to Interactive Prototype</li>
+            <li>Landing Page Development</li>
+          </ul>
 
-                        {/* Social Media Links */}
-                        <div className="flex gap-4">
-                            <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                                <FiFacebook className="text-xl" />
-                            </a>
-                            <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                                <FiTwitter className="text-xl" />
-                            </a>
-                            <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                                <FiInstagram className="text-xl" />
-                            </a>
-                            <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                                <FiLinkedin className="text-xl" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    );
+          <h3 className="font-semibold text-light mt-8 mb-4">
+            Data Entry & Management
+          </h3>
+          <ul className="space-y-3 text-gray-600">
+            <li>Data Organization & Cleaning</li>
+            <li>Data Entry Support</li>
+            <li>Data Reporting & Insights</li>
+          </ul>
+        </div>
+
+        {/* Right Services */}
+        <div>
+          <h3 className="font-semibold text-light mt-[-20px] md:mt-0 mb-4">Digitalization Consultant</h3>
+          <ul className="space-y-3 text-gray-600">
+            <li>IT Hardware Setup</li>
+            <li>SEO Strategy & Optimization</li>
+            <li>Copywriter</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="w-full border-t mt-8 mb-8"></div>
+
+      {/* Bottom Navigation */}
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center">
+        {/* Menu */}
+        <div
+            className="
+            grid grid-cols-2 gap-y-4 gap-x-10
+            text-left justify-between items-center w-full md:w-auto
+            md:flex md:flex-row md:gap-10 md:text-center
+            text-gray-700 mb-8 md:mb-0
+            self-start
+            "
+        >
+            <a href="#home" className="hover:text-black">Home</a>
+            <a href="#about" className="hover:text-black">About Us</a>
+            <a href="#services" className="hover:text-black">Our Services</a>
+            <a href="#process" className="hover:text-black">Work Process</a>
+        </div>
+            {/* Divider 2 */}
+            <div className="w-full border-t mt-0 mb-8 md:hidden"></div>
+        {/* Copyright */}
+        <p className="text-gray-700 text-center md:text-right">
+            © Copyright 2025, All Rights Reserved by{" "}
+            <span className="font-semibold">Nongslab</span>
+        </p>
+        </div>
+
+    </footer>
+  );
 };
 
 export default Footer;

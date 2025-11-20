@@ -54,10 +54,12 @@ const Header = () => {
                     </ul>
 
                     {/* Contact Us Button Desktop */}
-                    <button className="hidden md:flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full hover:bg-orange-600 transition-all duration-300 font-roboto font-medium shadow-md">
+                    <a 
+                    href="mailto:nlabs.asia@gmail.com"
+                    className="hidden md:flex items-center gap-2 bg-[#F08733] text-white px-6 py-3 rounded-full hover:bg-orange-600 transition-all duration-300 font-roboto font-medium">
                         <BiMessageDetail className="text-xl" />
                         Contact Us
-                    </button>
+                    </a>
 
                     {/* Mobile Menu Button */}
                     <button
@@ -85,10 +87,13 @@ const Header = () => {
                                 </li>
                             ))}
                             <li>
-                                <button className="w-full flex items-center justify-center gap-2 bg-primary text-white px-6 py-3 rounded-full hover:bg-orange-600 transition-all duration-300 font-roboto font-medium">
+                                <a className="w-full flex items-center justify-center gap-2 bg-[#F08733] text-white px-6 py-3 rounded-full hover:bg-orange-600 transition-all duration-300 font-roboto font-medium"
+                                href="mailto:nlabs.asia@gmail.com"
+                                onClick={() => setIsMenuOpen(false)}
+                                >
                                     <BiMessageDetail className="text-xl" />
                                     Contact Us
-                                </button>
+                                </a>
                             </li>
                         </ul>
                     </div>

@@ -3,20 +3,20 @@ import { FiArrowRight } from 'react-icons/fi';
 
 const About = () => {
     return (
-        <section id="about" className="py-16 md:py-20 bg-white">
+        <section id="about" className="scroll-mt-16 py-12 md:py-20 bg-white">
             {/* CONTAINER 1: Title Section */}
             <div className="container mx-auto px-4 mb-4 lg:mb-10 md:mb-4 ">
                 <div className="grid lg:grid-cols-2 gap-2 justify-betweeen items-start">
                     {/* Left - Title */}
                     <div>
-                        <h2 className="text-primary text-base lg:text-lg font-medium font-roboto mb-2">
+                        <h2 className="text-primary text-body font-medium font-roboto mb-2">
                             About Nongslab?
                         </h2>
                     </div>
 
                     {/* Right - Description */}
                     <div>
-                        <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 leading-tight font-roboto">
+                        <h3 className="text-h5 lg:text-h4 font-bold text-gray-900 leading-tight font-roboto">
                             We're an IT agency helping businesses grow through digital branding — building trust and engagement in every click.
                         </h3>
                     </div>
@@ -54,10 +54,13 @@ const About = () => {
                                     We don’t stop at “good enough.” Every project is designed to inspire,
                                     engage, and convert.
                                 </p>
-                                <button className="group inline-flex items-center gap-2 bg-[#f28c38] text-white px-6 md:px-5 py-3 md:py-3 rounded-full hover:bg-[#ff9e4b] transition-all duration-300 font-roboto font-medium shadow-lg text-base md:text-lg">
+                                <a 
+                                href='mailto:nlabs.asia@gmail.com'
+                                className="group inline-flex items-center gap-2 bg-[#f28c38] text-white px-6 md:px-5 py-3 md:py-3 rounded-full hover:bg-orange-600 transition-all duration-300 font-roboto font-medium shadow-lg text-base md:text-lg"
+                                >
                                     Consult with Us
                                     <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -107,13 +110,13 @@ const About = () => {
             </div>
 
             {/* CONTAINER 3: Bottom CTA Card */}
-            <div className="container mx-auto mt-20 px-4 lg:px-8">
+            <div className="container mx-auto mt-16 md:mt-20 px-4 lg:px-8">
             <div
                 className="relative rounded-3xl bg-[#FFF3EC] flex flex-col-reverse md:flex-row items-center justify-between gap-8 p-6 sm:px-10 sm:py-4 md:px-10 md:py-4 lg:px-10 lg:py-4"
             >
                 {/* Left Text (akan tampil di bawah di mobile) */}
                 <div className="w-full text-center md:text-left max-w-2xl">
-                <h3 className="text-lg sm:text-xl md:text-xl lg:text-2xl font-bold text-primary leading-relaxed font-roboto">
+                <h3 className="text-light md:text-h5 lg:text-h4 font-bold text-primary leading-relaxed font-roboto">
                     We don’t just build solutions — we build your business success. Nongslab is here to help you grow, innovate, and stay ahead of the competition.
                 </h3>
                 </div>
