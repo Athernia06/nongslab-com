@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import UIDesign from "../../assets/ui_design.svg";
+import LandingPage from "../../assets/landing_page.svg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ServicesSection = () => {
@@ -7,12 +9,12 @@ const ServicesSection = () => {
 
   const cards = [
     {
-      img: "/src/assets/ui_design.svg",
+      img: UIDesign,
       title: "UI Design to Interactive Prototype",
       desc: "From concept sketches to interactive prototypes, we design user interfaces that connect seamlessly with your audience.",
     },
     {
-      img: "/src/assets/landing_page.svg",
+      img: LandingPage,
       title: "Landing Page Development",
       desc: "We build fast, conversion-focused landing pages that engage users and help your business grow online.",
     },
