@@ -96,12 +96,12 @@ const About = () => {
                 {/* Card 3 - 3x Faster Execution */}
                 <div className="bg-[#4A5568] rounded-3xl p-8 md:p-10 text-white flex flex-col justify-between sm:col-span-2 h-full">
                     <div>
-                    <div className="text-5xl md:text-6xl font-bold font-roboto mb-2">
-                        3<span className="text-4xl">x</span>
+                    <div className="text-4xl md:text-5xl md:text-5xl font-bold font-roboto mb-1">
+                        3<span className="text-3xl">x</span>
                     </div>
-                    <div className="text-2xl font-medium mb-6">Faster Execution</div>
+                    <div className="text-lg md:text-xl font-medium mb-6">Faster Execution</div>
                     </div>
-                    <p className="text-white/90 text-lg leading-relaxed mt-auto">
+                    <p className="text-white/90 text-sm md:text-base leading-relaxed mt-auto">
                     With our streamlined process, your brand goes digital faster — without cutting corners
                     </p>
                 </div>
