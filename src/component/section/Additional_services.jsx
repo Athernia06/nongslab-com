@@ -31,14 +31,14 @@ const AdditionalServices = () => {
 
             {/* SECTION TITLE */}
             <h3 className="text-h5 md:text-h4 font-semibold max-w-[520px] mb-16">
-              Our additional services are designed to support every step of your digital transformation
+              Support services that cover the rest of your digital work
             </h3>
 
             <div className="flex flex-col gap-10 md:gap-20"> 
               {/* === ROW 1 === */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-40 items-center">
 
-                {/* LEFT IMAGE — top on mobile, left on desktop */}
+                {/* Left image: first on mobile, left column on desktop */}
                 <div className="flex justify-center md:justify-start order-1 md:order-1">
                   <img
                     src={ConsultantImg}
@@ -54,8 +54,8 @@ const AdditionalServices = () => {
                   </h4>
 
                   <p className="text-gray-600 mb-6 max-w-[460px]">
-                    We help your business go digital with the right IT solutions —
-                    from hardware setup to system optimization
+                    We help your business go digital with the right IT solutions,
+                    from hardware setup to system optimization.
                   </p>
 
                   <div className="flex flex-wrap gap-x-12 gap-y-8">
@@ -93,7 +93,7 @@ const AdditionalServices = () => {
               {/* === ROW 2 === */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-center">
 
-                {/* LEFT IMAGE — but right on desktop */}
+                {/* Left image: second on mobile, right column on desktop */}
                 <div className="flex justify-center md:justify-end order-2 md:order-2">
                   <img
                     src={DataEntryImg}
@@ -109,12 +109,12 @@ const AdditionalServices = () => {
                   </h4>
 
                   <p className="text-gray-600 mb-6 max-w-[460px]">
-                    We organize and manage your data to improve efficiency and support better business decisions
+                    We organize and manage your data so it is accurate, searchable, and ready to support business decisions.
                   </p>
 
                   <div className="flex flex-wrap gap-x-12 gap-y-8">
 
-                    {/* Data Organiztion & Cleaning */}
+                    {/* Data Organization & Cleaning */}
                     <div className="flex items-center gap-3">
                       <div className="w-14 h-14 bg-[#FFEFE4] rounded-2xl border border-[#E9742A] flex items-center justify-center">
                         <img src={DataCleaning} alt="data cleaning" className="w-7 h-7 object-contain" />

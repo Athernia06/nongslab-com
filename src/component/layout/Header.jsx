@@ -16,10 +16,10 @@ const Header = () => {
     }, []);
 
     const menuItems = [
-        { name: 'Home', href: '#home' },
-        { name: 'About Us', href: '#about' },
-        { name: 'Our Services', href: '#services' },
-        { name: 'Work Process', href: '#process' }
+        { name: 'About', href: '#about' },
+        { name: 'Services', href: '#services' },
+        { name: 'Work', href: '#work' },
+        { name: 'Contact', href: '#contact' }
     ];
 
     return (
@@ -41,7 +41,7 @@ const Header = () => {
                             <li key={item.name}>
                                 <a
                                     href={item.href}
-                                    className={`transition-colors duration-300 font-medium font-roboto ${
+                                    className={`transition-colors duration-300 font-medium font-sans ${
                                         isScrolled
                                             ? 'text-gray-700 hover:text-primary'
                                             : 'text-gray-900 hover:text-primary'
@@ -54,11 +54,11 @@ const Header = () => {
                     </ul>
 
                     {/* Contact Us Button Desktop */}
-                    <a 
-                    href="mailto:nlabs.asia@gmail.com"
-                    className="hidden md:flex items-center gap-2 bg-[#F08733] text-white px-6 py-3 rounded-full hover:bg-orange-600 transition-all duration-300 font-roboto font-medium">
+                    <a
+                    href="#contact"
+                    className="hidden md:flex items-center gap-2 bg-[#F08733] text-white px-6 py-3 rounded-full hover:bg-orange-600 transition-colors duration-300 font-sans font-medium min-h-[44px]">
                         <BiMessageDetail className="text-xl" />
-                        Contact Us
+                        Start a Project
                     </a>
 
                     {/* Mobile Menu Button */}
@@ -79,7 +79,7 @@ const Header = () => {
                                 <li key={item.name}>
                                     <a
                                         href={item.href}
-                                        className="block text-gray-700 hover:text-primary transition-colors duration-300 font-medium font-roboto"
+                                        className="block text-gray-700 hover:text-primary transition-colors duration-300 font-medium font-sans"
                                         onClick={() => setIsMenuOpen(false)}
                                     >
                                         {item.name}
@@ -87,12 +87,12 @@ const Header = () => {
                                 </li>
                             ))}
                             <li>
-                                <a className="w-full flex items-center justify-center gap-2 bg-[#F08733] text-white px-6 py-3 rounded-full hover:bg-orange-600 transition-all duration-300 font-roboto font-medium"
-                                href="mailto:nlabs.asia@gmail.com"
+                                <a className="w-full flex items-center justify-center gap-2 bg-[#F08733] text-white px-6 py-3 rounded-full hover:bg-orange-600 transition-colors duration-300 font-sans font-medium min-h-[44px]"
+                                href="#contact"
                                 onClick={() => setIsMenuOpen(false)}
                                 >
                                     <BiMessageDetail className="text-xl" />
-                                    Contact Us
+                                    Start a Project
                                 </a>
                             </li>
                         </ul>

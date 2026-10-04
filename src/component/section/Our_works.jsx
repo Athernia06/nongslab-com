@@ -14,25 +14,25 @@ const WorkProcess = () => {
       id: "1",
       icon: IconDiscover,
       title: "Discover",
-      desc: "We dig deep to define your success",
+      desc: "We learn your goals, users, and constraints before anything else.",
     },
     {
       id: "2",
       icon: IconStrategize,
       title: "Strategize",
-      desc: "We build a clear, actionable plan tailored to your goals",
+      desc: "We plan the work and agree on scope so there are no surprises later.",
     },
     {
       id: "3",
       icon: IconExecute,
       title: "Execute",
-      desc: "We team up with you to turn strategy into results",
+      desc: "We design and build, keeping you in the loop at every step.",
     },
     {
       id: "4",
       icon: IconOptimize,
       title: "Optimize",
-      desc: "We refine and ensure lasting results.",
+      desc: "After launch we measure, fix, and improve what needs it.",
     },
   ];
 
@@ -44,8 +44,8 @@ const WorkProcess = () => {
         <p className="text-primary font-medium mb-2">Work Process</p>
 
         <h2 className="text-h5 md:text-h4 font-bold leading-snug">
-          We start by learning your goals, then guide every step through a flexible  
-          process that keeps things clear, collaborative, and impactful.
+          We start by learning your goals, then guide every step through a flexible
+          process that keeps the work clear and collaborative.
         </h2>
       </div>
 
@@ -81,17 +81,16 @@ const WorkProcess = () => {
 
           {/* LEFT TEXT */}
           <div className="order-2 md:order-1">
-            <h2 className="text-h4 md:text-h3 font-bold mb-3">Ready to level up your business?</h2>
+            <h2 className="text-h4 md:text-h3 font-bold mb-3">Have a project in mind?</h2>
             <p className="text-white/90 max-w-md">
-              Our team combines strategy, design, and technology to help your brand stand out,
-              attract customers, and drive real results.
+              Tell us what you want to build. We will come back with a plan, a scope, and a straight answer.
             </p>
 
-            <a 
-            href="mailto:nlabs.asia@gmail.com"
-            className="inline-block mt-6 border border-white px-5 py-2.5 rounded-lg text-white hover:bg-white hover:text-orange-500 font-medium transition-all duration-300"
+            <a
+            href="#contact"
+            className="inline-block mt-6 border border-white px-5 py-3 rounded-lg text-white hover:bg-white hover:text-orange-500 font-medium transition-colors duration-300 min-h-[44px]"
             >
-              Let’s Collaborate → 
+              Start a Project
             </a>
           </div>
 

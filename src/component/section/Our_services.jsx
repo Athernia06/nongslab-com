@@ -1,208 +1,89 @@
-import React, { useState } from "react";
+import React from "react";
 import UIDesign from "../../assets/ui_design.svg";
 import LandingPage from "../../assets/landing_page.svg";
-import { motion, AnimatePresence } from "framer-motion";
+import { FiArrowRight } from "react-icons/fi";
+
+const services = [
+    {
+        id: "01",
+        title: "Web Development",
+        desc: "High-performance websites and custom web applications. We work with React, WordPress, and Laravel, and pick the stack that fits the job instead of forcing one on every project.",
+        tags: ["React", "WordPress", "Laravel"],
+    },
+    {
+        id: "02",
+        title: "UI/UX Design",
+        desc: "Interfaces designed in Figma around how people actually use them, not around templates. We take you from wireframes to interactive prototypes you can test before writing code.",
+        tags: ["Figma", "Wireframes", "Prototypes"],
+    },
+    {
+        id: "03",
+        title: "Digital Workflow Optimization",
+        desc: "We map how your work actually runs, then automate and streamline the repetitive parts: internal tools, integrations, and process fixes that give you hours back.",
+        tags: ["Automation", "Integrations", "Internal tools"],
+    },
+];
 
 const ServicesSection = () => {
-  const [currentCard, setCurrentCard] = useState(0);
-  const [direction, setDirection] = useState("right"); // 🧭 arah animasi
+    return (
+        <section id="services" className="scroll-mt-24 md:scroll-mt-32 bg-white py-12 md:py-20">
+            <div className="container mx-auto px-4 lg:px-8">
+                <div className="grid lg:grid-cols-[1fr_2fr] gap-10 lg:gap-16">
+                    {/* Left: sticky-feel heading column */}
+                    <div>
+                        <h2 className="text-primary text-body font-medium font-sans mb-2">
+                            Services
+                        </h2>
+                        <h3 className="text-neutral-950 text-h5 lg:text-h4 font-bold leading-tight font-sans">
+                            What we build for clients
+                        </h3>
+                    </div>
 
-  const cards = [
-    {
-      img: UIDesign,
-      title: "UI Design to Interactive Prototype",
-      desc: "From concept sketches to interactive prototypes, we design user interfaces that connect seamlessly with your audience.",
-    },
-    {
-      img: LandingPage,
-      title: "Landing Page Development",
-      desc: "We build fast, conversion-focused landing pages that engage users and help your business grow online.",
-    },
-  ];
+                    {/* Right: stacked service rows, varied by content length (R-14: rows, not identical cards) */}
+                    <div className="flex flex-col">
+                        {services.map((service, i) => (
+                            <div
+                                key={service.id}
+                                className={`py-8 border-t border-gray-200 ${i === services.length - 1 ? "border-b" : ""}`}
+                            >
+                                <div className="flex items-start gap-6 md:gap-10">
+                                    <span className="text-primary font-bold text-h5 md:text-h4 font-sans shrink-0">
+                                        {service.id}
+                                    </span>
+                                    <div>
+                                        <h4 className="text-lg md:text-xl font-semibold text-neutral-950 font-sans mb-2">
+                                            {service.title}
+                                        </h4>
+                                        <p className="text-gray-600 text-base leading-relaxed font-sans max-w-xl mb-4">
+                                            {service.desc}
+                                        </p>
+                                        <ul className="flex flex-wrap gap-2">
+                                            {service.tags.map((tag) => (
+                                                <li
+                                                    key={tag}
+                                                    className="font-mono text-caption font-medium text-gray-700 bg-[#FFF3EC] px-3 py-1.5 rounded-full"
+                                                >
+                                                    {tag}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
 
-  // 👉 Handle next dan prev dengan arah animasi
-  const handleNext = () => {
-    if (currentCard < cards.length - 1) {
-      setDirection("left"); // geser ke kiri
-      setCurrentCard(currentCard + 1);
-    }
-  };
-
-  const handlePrev = () => {
-    if (currentCard > 0) {
-      setDirection("right"); // geser ke kanan
-      setCurrentCard(currentCard - 1);
-    }
-  };
-
-  // 🎬 Variants animasi berdasarkan arah
-  const slideVariants = {
-    enter: (direction) => ({
-      x: direction === "left" ? 100 : -100,
-      opacity: 0,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: (direction) => ({
-      x: direction === "left" ? -100 : 100,
-      opacity: 0,
-    }),
-  };
-
-  const transitionConfig = { duration: 0.6, ease: "easeInOut" };
-
-  return (
-    <section id="services" className="scroll-mt-24 md:scroll-mt-32 container mx-auto px-4 lg:px-8 py-4">
-      {/* ================= DESKTOP ================= */}
-      <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left - Text & Arrows */}
-        <div className="flex flex-col justify-between items-end gap-32">
-          <div className="flex flex-col gap-2">
-            <h4 className="text-primary text-body font-medium font-roboto">
-              Our Services
-            </h4>
-            <h2 className="text-neutral-950 text-h4 font-bold leading-tight font-roboto">
-              From design to development, we provide end-to-end digital services
-              that help your business grow smarter, faster, and stronger
-            </h2>
-          </div>
-
-          {/* Arrows */}
-          <div className="flex items-center gap-6 mt-6">
-            <button
-              onClick={handlePrev}
-              disabled={currentCard === 0}
-              className={`w-12 h-12 flex items-center justify-center rounded-full border transition ${
-                currentCard === 0
-                  ? "border-gray-200 text-gray-300"
-                  : "bg-orange-500 hover:bg-orange-600 text-white"
-              }`}
-            >
-              ←
-            </button>
-            <button
-              onClick={handleNext}
-              disabled={currentCard === cards.length - 1}
-              className={`w-12 h-12 flex items-center justify-center rounded-full border transition ${
-                currentCard === cards.length - 1
-                  ? "border-gray-200 text-gray-300"
-                  : "bg-orange-500 hover:bg-orange-600 text-white"
-              }`}
-            >
-              →
-            </button>
-          </div>
-        </div>
-
-        {/* Right - Animated Card */}
-        <div className="relative w-full h-full flex justify-center">
-          <AnimatePresence custom={direction} mode="wait">
-            <motion.div
-              key={currentCard}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={transitionConfig}
-              className="bg-white rounded-2xl border border-gray-200 overflow-hidden flex flex-col absolute w-full"
-            >
-              <div className="bg-gray-100 h-64 w-full overflow-hidden">
-                <img
-                  src={cards[currentCard].img}
-                  alt={cards[currentCard].title}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <div className="p-6 flex flex-col gap-3">
-                <h3 className="text-xl font-semibold text-neutral-950 font-roboto">
-                  {cards[currentCard].title}
-                </h3>
-                <p className="text-gray-500 text-base leading-relaxed font-roboto">
-                  {cards[currentCard].desc}
-                </p>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </div>
-
-      {/* ================= MOBILE & TABLET ================= */}
-      <div className="flex flex-col lg:hidden gap-8 items-center">
-        {/* Text atas */}
-        <div className="text-left flex flex-col gap-3">
-          <h4 className="text-primary font-medium font-roboto">
-            Our Services
-          </h4>
-          <h2 className="text-neutral-950 text-lg md:text-xl font-bold leading-snug font-roboto">
-            From design to development, we provide end-to-end digital services
-            that help your business grow smarter, faster, and stronger
-          </h2>
-        </div>
-
-        {/* Card */}
-        <div className="relative w-full h-[420px] flex items-end">
-          {/* 💡 tambahkan height tetap dan center agar arrow tidak ketutup */}
-          <AnimatePresence custom={direction} mode="wait">
-            <motion.div
-              key={currentCard}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={transitionConfig}
-              className="bg-white rounded-2xl border border-gray-200 overflow-hidden flex flex-col absolute w-full"
-            >
-              <div className="bg-gray-100 h-64 w-full overflow-hidden">
-                <img
-                  src={cards[currentCard].img}
-                  alt={cards[currentCard].title}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <div className="p-6 flex flex-col gap-3">
-                <h3 className="text-lg md:text-xl font-semibold text-neutral-950 font-roboto">
-                  {cards[currentCard].title}
-                </h3>
-                <p className="text-gray-500 text-base leading-relaxed font-roboto">
-                  {cards[currentCard].desc}
-                </p>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* Arrow bawah (sekarang akan selalu tampil dan bisa diklik) */}
-        <div className="flex w-full justify-end gap-6">
-          <button
-            onClick={handlePrev}
-            disabled={currentCard === 0}
-            className={`w-10 h-10 flex items-center justify-center rounded-full border transition ${
-              currentCard === 0
-                ? "border-gray-200 text-gray-300"
-                : "bg-orange-500 hover:bg-orange-600 text-white"
-            }`}
-          >
-            ←
-          </button>
-          <button
-            onClick={handleNext}
-            disabled={currentCard === cards.length - 1}
-            className={`w-10 h-10 flex items-center justify-center rounded-full border transition ${
-              currentCard === cards.length - 1
-                ? "border-gray-200 text-gray-300"
-                : "bg-orange-500 hover:bg-orange-600 text-white"
-            }`}
-          >
-            →
-          </button>
-        </div>
-      </div>
-    </section>
-  );
+                        <a
+                            href="#contact"
+                            className="group inline-flex items-center gap-2 mt-8 text-primary font-medium font-sans text-lg min-h-[44px] hover:text-orange-600 transition-colors"
+                        >
+                            Discuss your project
+                            <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default ServicesSection;

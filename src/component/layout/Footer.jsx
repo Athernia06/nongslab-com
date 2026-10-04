@@ -1,7 +1,4 @@
 import React from "react";
-import LinkedIn from "../../assets/linkedin.svg";
-import Instagram from "../../assets/instagram.svg";
-import TikTok from "../../assets/tiktok.svg";
 import FooterLogo from '../../assets/footer_logo.svg';
 
 const Footer = () => {
@@ -12,19 +9,12 @@ const Footer = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20">
         {/* Left */}
         <div className="grid grid-cols-1 gap-4 md:gap-10">
-          {/* Logo */}
-            <div className="flex flex-col gap-4 md:gap-6">
+          <div className="flex flex-col gap-4 md:gap-6">
             <img src={FooterLogo} alt="Nongslab Logo" className="w-40 md:w-44" />
 
             <p className="text-light max-w-md leading-relaxed">
-                Your Trusted Partner for Sustainable Digital Growth
-        </p>
-            </div>
-          {/* Social Icons */}
-          <div className="flex gap-4 mt-1">
-            <img src={LinkedIn} className="w-8 h-8 text-[#6A6A6A]" />
-            <img src={TikTok} className="w-8 h-8 text-[#6A6A6A]" /> {/* TikTok icon substitute */}
-            <img src={Instagram} className="w-8 h-8 text-[#6A6A6A]" />
+              A two-person digital production studio by Muhammad Rafi and David Isser Harel. High-performance websites, UI/UX design, and custom web applications.
+            </p>
           </div>
         </div>
 
@@ -32,27 +22,28 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-light mb-4">Main Services</h3>
           <ul className="space-y-3 text-gray-600">
-            <li>UI Design to Interactive Prototype</li>
-            <li>Landing Page Development</li>
+            <li>Web Development (React, WordPress, Laravel)</li>
+            <li>UI/UX Design (Figma)</li>
+            <li>Digital Workflow Optimization</li>
           </ul>
 
           <h3 className="font-semibold text-light mt-8 mb-4">
-            Data Entry & Management
+            Support Services
           </h3>
           <ul className="space-y-3 text-gray-600">
-            <li>Data Organization & Cleaning</li>
-            <li>Data Entry Support</li>
-            <li>Data Reporting & Insights</li>
+            <li>Digitalization Consulting</li>
+            <li>Data Entry & Management</li>
           </ul>
         </div>
 
-        {/* Right Services */}
+        {/* Right: site navigation */}
         <div>
-          <h3 className="font-semibold text-light mt-[-20px] md:mt-0 mb-4">Digitalization Consultant</h3>
+          <h3 className="font-semibold text-light mb-4">Site</h3>
           <ul className="space-y-3 text-gray-600">
-            <li>IT Hardware Setup</li>
-            <li>SEO Strategy & Optimization</li>
-            <li>Copywriter</li>
+            <li><a href="#about" className="hover:text-black transition-colors">About</a></li>
+            <li><a href="#services" className="hover:text-black transition-colors">Services</a></li>
+            <li><a href="#work" className="hover:text-black transition-colors">Work</a></li>
+            <li><a href="#contact" className="hover:text-black transition-colors">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -60,31 +51,19 @@ const Footer = () => {
       {/* Divider */}
       <div className="w-full border-t mt-8 mb-8"></div>
 
-      {/* Bottom Navigation */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center">
-        {/* Menu */}
-        <div
-            className="
-            grid grid-cols-2 gap-y-4 gap-x-10
-            text-left justify-between items-center w-full md:w-auto
-            md:flex md:flex-row md:gap-10 md:text-center
-            text-gray-700 mb-8 md:mb-0
-            self-start
-            "
-        >
-            <a href="#home" className="hover:text-black">Home</a>
-            <a href="#about" className="hover:text-black">About Us</a>
-            <a href="#services" className="hover:text-black">Our Services</a>
-            <a href="#process" className="hover:text-black">Work Process</a>
-        </div>
-            {/* Divider 2 */}
-            <div className="w-full border-t mt-0 mb-8 md:hidden"></div>
-        {/* Copyright */}
-        <p className="text-gray-700 text-center md:text-right">
-            © Copyright 2025, All Rights Reserved by{" "}
-            <span className="font-semibold">Nongslab</span>
+      {/* Bottom */}
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+        <p className="text-gray-700 text-center md:text-left">
+          © Copyright {new Date().getFullYear()}, All Rights Reserved by{" "}
+          <span className="font-semibold">Nongslab</span>
         </p>
-        </div>
+        <a
+          href="mailto:nlabs.asia@gmail.com"
+          className="text-gray-700 text-center md:text-right hover:text-black transition-colors min-h-[44px] flex items-center justify-center md:justify-end"
+        >
+          nlabs.asia@gmail.com
+        </a>
+      </div>
 
     </footer>
   );
